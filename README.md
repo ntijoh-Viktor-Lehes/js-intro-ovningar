@@ -240,4 +240,148 @@ Det finns även jämförelseoperatorn `===` ("triple equals") som inte gör typo
 
 0. Använd **alltid** `===` vid jämförelser
 
+## Övningar
 
+### 1. Smallest of Two
+
+Givet två integers som input ska funktionen returnera det lägsta värdet.
+
+Använd gärna guards
+
+#### Länkar
+
+* [Elixir School - Named Functions](https://elixirschool.com/en/lessons/basics/functions/#named-functions)
+* [Elixir School - Basic Data Types](https://elixirschool.com/en/lessons/basics/basics/#basic-data-types)
+* [Elixir School - Control Structures](https://elixirschool.com/en/lessons/basics/control-structures/)
+* [Hexdocs - Guards](https://hexdocs.pm/elixir/guards.html)
+
+### 2. Largest of three
+
+Givet tre integers som input ska funktionen returnera det största värdet.
+
+Använd gärna guards
+
+### 3. Smallest of four
+
+Givet fyra integers som Input ska funktionen returnera det lägsta värdet.
+
+Tänk på att elixir har function overloading för funktioner av olika aritet.
+
+* [Understanding Function Arity in Elixir](https://www.culttt.com/2016/05/02/understanding-function-arity-elixir)
+
+### 4. TicketPrice
+
+Givet en integer `age` som input ska funktionen returnera korrekt pris enligt listan nedan:
+
+- Under 18: 10
+- Från och med 18 till och med 64: 20
+- Över 64: 15
+
+### 5. Next Number
+
+Tar ett heltal som input och ger nästa tal som output.
+
+### 6. Is Empty
+
+Tar en `Array` som input och returnerar true om den är tom, annars false
+
+### 7. First of
+
+Tar en Array som input och returnerar det första elementet.
+
+### 8. Last of
+
+Tar en List som input och returnerar sista elementet.
+
+### 9. Prepend
+
+Tar en Array och en Integer som input och returnerar en Array bestående av integern och arraken (med integern på första plats).
+
+
+### 10. Append
+
+Tar en Array och en Integer som input och returnerar en Array bestående av integern och arraken (med integern på sista plats).
+
+### 11. Length
+
+Tar en Array som input och returnerar längden (antalet element) på arraken.
+
+### 12. Sum
+
+Tar en Array med Integers som input och returnerar summan av alla talen.
+
+### 13. Average
+
+Tar en Array med Integers som input och returnerar medelvärdet av alla talen.
+
+### 14. Concat
+
+Tar två Arrayer som input och returnerar en ny Array, där båda arrayerna konkateneras (sätts ihop).
+
+### 15. Starts With
+
+Tar en sträng och ett tecken som input och returnerar true/false beroende på om strängen börjar med tecknet eller ej.
+
+### 16. Ends With
+
+Tar en sträng och ett tecken som input och returnerar true/false beroende på om strängen slutar med tecknet eller ej.
+
+### 17. Chomp
+
+Tar en sträng som input och returnerar en sträng där en eventuell radbrytning ("\n") tagits bort från slutet.
+
+### 18. Index Of
+
+Tar en sträng och ett tecken som input och returnerar tecknets position om det finns, annars nil.
+
+### 19. Count (String)
+
+Tar en sträng och ett tecken som input och returnerar antalet förekomster av tecknet i strängen
+
+### 20. Count (Array)
+
+Tar en Array och ett nummer som input och returnerar antalet förekomster av numret i listan.
+
+### 21. Contains (String)
+
+Tar en sträng och ett tecken som input och returnerar true/false om tecknet finns i strängen eller ej.
+### 22. Contains (Array)
+
+Tar en list och ett värde och returnerar true/false beroende på om värdet finns i listan eller ej
+
+### 23. Remove (String)
+
+Tar två strängar som input och returnerar ny sträng där alla förekomster av sträng2 i sträng1 är borttagna.
+
+### 24. Replace (String)
+
+Tar tre strängar som input och returnerar en ny sträng där alla förekomster av sträng2 i sträng1 är ersatta med sträng3
+
+### 25. Split (String)
+
+Tar en sträng och ett tecken som input och returnerar en Array, där elementen i listan är alla delar av strängen som är avskiljda med tecknet
+
+#### Exempel
+* `split("1;2;3;4;5", ";") #=> ["1", "2", "3", "4", "5"]`
+* `split("Hello World", " ") #=> ["Hello", "World"]`
+* `split("This is a line\nthis is another line\nthis is a line too", "\n") #=> ["This is a line", "this is another line", "this is a line too"]`
+
+### 26. Rovarize 
+
+Tar en sträng och omvandlar strängen från svenska till rövarspråket.
+
+#### Exempel
+
+* `rovarize("Bajsar björnar i skogen?") #=> "Bobajojsosaror bobjojörornonaror i soskokogogenon"`
+
+#### Länkar
+
+* [Rövarspråket - Wikipedia](https://sv.wikipedia.org/wiki/R%C3%B6varspr%C3%A5ket)
+
+### 27. Derovarize
+
+Tar en sträng och omvandlar strängen från rövarspråket till svenska.
+
+#### Exempel
+* `derovarize("Tothohisos a bobitot hoharordoderor") #=> 'This is a bit harder'`
+* `derovarize("Bobajojsosaror bobjojörornonaror i soskokogogenon"') #=> 'Bajsar björnar i skogen?'`
