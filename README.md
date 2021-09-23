@@ -48,8 +48,8 @@ function foo() {
    return "foo" + y;
 }
 x = foo()
-Console.log(x) //=> 'foo3'
-Console.log(y) //=> 3
+console.log(x) //=> 'foo3'
+console.log(y) //=> 3
 ````
 
 Fast variablen `y` är definerad inne i funktionen `foo()` går den att komma åt utfanför funktionen, dess scope blir globalt.
