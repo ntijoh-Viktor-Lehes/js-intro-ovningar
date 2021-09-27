@@ -2,7 +2,7 @@
 
 # JS Intro-övningar
 
-För att kunna köra JS utanför webbläsaren använder vi [Node.js](https://nodejs.org/en/) Node.js (eller Node) är en JS-körtidsmiljö baserad på V8-körtidsmiljön från Chrome.
+För att kunna köra JS utanför webbläsaren använder vi [Node.js](https://nodejs.org/en/) Node.js (eller Node) är en JS-körtidsmiljö baserad på V8-körtidsmiljön från C
 
 ## Installation
 
