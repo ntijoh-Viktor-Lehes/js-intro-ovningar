@@ -246,28 +246,13 @@ Det finns även jämförelseoperatorn `===` ("triple equals") som inte gör typo
 
 Givet två integers som input ska funktionen returnera det lägsta värdet.
 
-Använd gärna guards
-
-#### Länkar
-
-* [Elixir School - Named Functions](https://elixirschool.com/en/lessons/basics/functions/#named-functions)
-* [Elixir School - Basic Data Types](https://elixirschool.com/en/lessons/basics/basics/#basic-data-types)
-* [Elixir School - Control Structures](https://elixirschool.com/en/lessons/basics/control-structures/)
-* [Hexdocs - Guards](https://hexdocs.pm/elixir/guards.html)
-
 ### 2. Largest of three
 
 Givet tre integers som input ska funktionen returnera det största värdet.
 
-Använd gärna guards
-
 ### 3. Smallest of four
 
 Givet fyra integers som Input ska funktionen returnera det lägsta värdet.
-
-Tänk på att elixir har function overloading för funktioner av olika aritet.
-
-* [Understanding Function Arity in Elixir](https://www.culttt.com/2016/05/02/understanding-function-arity-elixir)
 
 ### 4. TicketPrice
 
