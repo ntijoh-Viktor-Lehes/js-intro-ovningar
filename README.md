@@ -144,11 +144,11 @@ Variabler som är deklarerade med nyckelordet **`const`** har precis som variabl
 
 ```js
 function foo(bar) {
-  const baz = 10; //baz får inte tilldelas ett nytt värde
+  const baz = 10; //qux får inte tilldelas ett nytt värde
   if (bar < 18) {
-      baz -= 5; //försök till modifiering av baz
+      baz -= 5; //försök till modifiering av qux
     }
-  return baz;
+  return qux;
 }
 foo(17); //Uncaught TypeError: Assignment to constant variable.
 ```
