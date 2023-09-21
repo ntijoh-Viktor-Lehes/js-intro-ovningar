@@ -38,7 +38,7 @@ Från början skapade man variabler i javascript på följande sätt:
 x = 1
 ````
 
-Problemet med att skapa variabler på detta sätt i js är att variabelns [scope](https://en.wikipedia.org/wiki/Scope_(computer_science)) blir globalt. Globala variabler vill man av varje skäl undvika då det blir mer eller mindre omöjligt att förstå vad som finns i en variabel.
+Problemet med att skapa variabler på detta sätt i js är att variabelns *[scope](https://en.wikipedia.org/wiki/Scope_(computer_science))* blir globalt. Globala variabler[^1] vill man av varje skäl undvika då det blir mer eller mindre omöjligt att veta vad som finns i en variabel.
 
 Se nedanstående exempel:
 
@@ -54,14 +54,18 @@ console.log(y) //=> 3
 
 Fast variablen `y` är definerad inne i funktionen `foo()` går den att komma åt utfanför funktionen, dess scope blir globalt.
 
+[^1]: Globala *statiska* "variabler" är mer ok.
+
 I js finns det totalt 4 olika nivåer av scopes:
 
-1. Global - Synligt överallt (som i exemplet ovan)
-2. Function - Synlig inom en funktion (och dess sub-block/scopes)
-3. Block - Synlig inom ett block (och dess sub-block/scopes)
-4. Module - Synlig inom en modul (en samling funktioner)
+1. **Global** - Synligt överallt (som i exemplet ovan)
+2. **Function** - Synlig inom en funktion (och dess sub-block/scopes)
+3. **Block** - Synlig inom ett block (och dess sub-block/scopes)
+4. **Module** - Synlig inom en modul (en samling funktioner)
 
 Förenklat kan man säga att varje gång du skriver `{` i js öppnas ett nytt scope (som sen stängs med `}`)
+
+Exempel:
 
 ```js
 // Utanför funktioner: Global scope
@@ -74,7 +78,7 @@ function full_name() { // nytt scope (funktion)
 }
 
 function max_test_result() { // nytt scope (funktion)
-  let i = 0;
+  i = 0;
   let max = 0;
   while (i < test_results.length) {// nytt scope (while)
     const current_test_result = test_results[i];
@@ -86,6 +90,16 @@ function max_test_result() { // nytt scope (funktion)
   return max;
 }
 ```
+
+Baserat på exemplet ovan, vad kommer följande kod resultera i när den körs?
+
+````javascript
+console.log(i);
+max_result = max_text_result();
+console.log(max_result);
+console.log(i);
+console.log(max);
+````
 
 Följande sätt finns för att deklarera variabler i js:
 
@@ -101,15 +115,15 @@ function bar() {
   if (foo == baz) { // foo är ju global
     var qux = 3; //qux går att använda överallt inne i funktionen
   }
-  return qux; // qux är deklarerad inne i if-blocket, men går att komma åt utanför 
+  return qux; // qux är deklarerad inne i if-blocket, men går att komma åt utanför eftersom den är deklarerad med var
 }
 ````
 
-Vad händer om if-satsen aldrig körs? Jo, qux blir `undefined`. Antagligen inte något man vill.
+Vad händer om if-satsen aldrig körs? Jo, qux blir `undefined`. Antagligen inte något man vill. Se "[The Billion Dollar Mistake](https://en.wikipedia.org/wiki/Null_pointer#History)"
 
 ### Funktionsparametrar
 
-Variabler som kommer via en funktionsdefinition får samma scope som variabler deklarerade med `var`
+Variabler som kommer till en funktion via dess parametrar/argument får samma scope som variabler deklarerade med `var`
 
 ````js
 function foo(bar, baz) {
@@ -210,6 +224,32 @@ När du försöker göra något med värden som är `undefined` kommer dit progr
      ... //resten av funktionen (inga nya variabler introduceras)
    }
    ```
+
+
+
+## "Null"
+
+Likt det finns flera sätt att deklarera variabler i Javascript, finns det även flera olika "null"-värden.
+
+### Null
+
+> *The **`null`** value represents the intentional absence of any object value. It is one of JavaScript's [primitive values](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) and is treated as [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) for boolean operations.*
+>
+> -- [MDN Javascript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/null)
+
+### Undefined
+
+> A variable that has not been assigned a value is of type `undefined`. A method or statement also returns `undefined` if the variable that is being evaluated does not have an assigned value. A function returns `undefined` if a value was not [`returned`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return).
+>
+> -- [MDN Javascript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)
+
+### Null vs Undefined
+
+> **Undefined means a variable has been declared but has yet not been assigned a value.** **Null is an assignment value**. It can be assigned to a variable as a representation of no value
+>
+> -- [Geeks for Geeks - Undefined Vs Null in JavaScript](https://www.geeksforgeeks.org/undefined-vs-null-in-javascript/)
+
+![null_vs_undefined](./img/null_vs_undefined.png)
 
 ## Jämförelser
 
